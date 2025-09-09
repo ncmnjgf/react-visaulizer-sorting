@@ -1,12 +1,37 @@
 import { useState } from 'react'
 import './App.css'
 import Visualizer from './control/Visualizer';
-
+import Control from './control/Control';
 function App() {
 
-const [array,setarray] = useState([100,270,465,58,160,178,490]);
+const [array,setarray] = useState([]);
+
+const handleNewArrayGenerate = () =>{
+  const newArray = Array.from({length : 30},()=>
+    Math.floor(Math.random () * 500)
+  );
+  setarray(newArray)
+}
+
+const handleSorting = (e) =>{
+
+const sortingMethod = e.target.value;
+switch(sortingMethod){
+  case'bubblesort':
+  BubbleAnimation('animation')
+  break;
+  default:
+    break;
+}
+}
+function BubbleAnimation(animation){
+console.log(animation)
+
+}
   return (
     <>
+    <Control handleNewArrayGenerate={handleNewArrayGenerate}
+    handleSorting={handleSorting}/>
     <Visualizer array={array}/>
     </>
  

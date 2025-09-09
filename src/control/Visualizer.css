@@ -72,6 +72,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    
   }
   .neumorphism-dropdown::after {
     content: '\25BC';

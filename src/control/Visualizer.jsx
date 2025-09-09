@@ -13,4 +13,4 @@ const Visualizer = ({array}) => {
   )
 }
 
-export default Visualizer
+export default Visualizer;
