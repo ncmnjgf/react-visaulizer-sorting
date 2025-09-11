@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Visualizer from './control/Visualizer';
 import Control from './control/Control';
+import bubblesort from './control/algorithm/BubbleSort';
 function App() {
 
 const [array,setarray] = useState([]);
@@ -18,6 +19,7 @@ const handleSorting = (e) =>{
 const sortingMethod = e.target.value;
 switch(sortingMethod){
   case'bubblesort':
+  const animationArr = bubblesort(array);
   BubbleAnimation('animation')
   break;
   default:
