@@ -50,3 +50,6 @@ Add more algorithms (Heap Sort, Radix Sort).
 Dark mode support.
 
 Compare algorithms based on time complexity.
+
+
+Trying to learn new things
