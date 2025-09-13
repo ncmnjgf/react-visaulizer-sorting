@@ -53,3 +53,4 @@ Compare algorithms based on time complexity.
 
 
 Trying to learn new things
+-In Future I will Add new algorithms
