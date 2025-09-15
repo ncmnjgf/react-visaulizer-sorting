@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Visualizer.css"
-const Control = ({ handleNewArrayGenerate,handleSorting }) => {
+const Control = ({ handleNewArrayGenerate,handleSorting,user,setuser }) => {
   return (
     <div className='controls-container'>
       <button className='new-button' onClick={handleNewArrayGenerate}>Generated New  Array</button>

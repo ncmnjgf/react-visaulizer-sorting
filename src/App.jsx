@@ -6,9 +6,10 @@ import bubblesort from './control/algorithm/BubbleSort';
 function App() {
 
   const [array, setarray] = useState([]);
+  const [user,setuser]  = useState();
 
   const handleNewArrayGenerate = () => {
-    const newArray = Array.from({ length: 30 }, () =>
+    const newArray = Array.from({ length: 6 }, () =>
       Math.floor(Math.random() * 500)
     );
     setarray(newArray)
@@ -35,26 +36,39 @@ function App() {
       setTimeout(() => {
         barOne.style.backgroundColor = swap ? 'red' : 'yellow'
         barTwo.style.backgroundColor = swap ? 'red' : 'yellow'
-        if(swap){
+        if (swap) {
           const heightTemp = barOne.style.height;
-          barOne.style.height  = barTwo.style.height;
+          barOne.style.height = barTwo.style.height;
           barTwo.style.height = heightTemp;
-
-
-
           const content = barOne.innerText;
           barOne.innerText = barTwo.innerText;
           barTwo.innerText = content;
         }
-      }, 1000)
+        setTimeout(() => {
+          barOne.style.backgroundColor = 'blue';
+          barTwo.style.backgroundColor = 'blue';
+        }, 150)
+      }, i * 150)
       barOne.style.backgroundColor = swap ? 'red' : 'yellow'
       barTwo.style.backgroundColor = swap ? 'red' : 'yellow'
     }
+    setTimeout(()=>{
+     for (let j = 0; j < barEle.length; j++) {
+      setTimeout(()=>{
+        barEle[j].style.backgroundColor = 'green'
+      },j* 150)
+      
+     }
+    },animation.length * 150)
   }
   return (
     <>
       <Control handleNewArrayGenerate={handleNewArrayGenerate}
-        handleSorting={handleSorting} />
+        handleSorting={handleSorting} user = {user}/>
+
+
+
+
       <Visualizer array={array} />
     </>
 
