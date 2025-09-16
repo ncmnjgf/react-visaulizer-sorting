@@ -64,7 +64,7 @@ function App() {
   return (
     <>
       <Control handleNewArrayGenerate={handleNewArrayGenerate}
-        handleSorting={handleSorting} user = {user}/>
+        handleSorting={handleSorting} user = {user} setuser={setuser}/>
 
 
 
