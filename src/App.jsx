@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Visualizer from './control/Visualizer';
 import Control from './control/Control';
@@ -6,7 +6,20 @@ import bubblesort from './control/algorithm/BubbleSort';
 function App() {
 
   const [array, setarray] = useState([]);
-  const [user,setuser]  = useState();
+  const [user,setuser]  = useState('');
+
+useEffect(() => {
+  if(user){
+    const userInput = user.split(","); // split by commas
+    
+    const filtered = userInput
+      .map(item => parseFloat(item)) // convert to number (float first)
+      .filter(num => !isNaN(num) && Number.isInteger(num) && num <= 500); // keep only valid integers ≤ 500
+
+    console.log(filtered, "this is user input");
+    setarray(filtered);
+  }
+}, [user]);
 
   const handleNewArrayGenerate = () => {
     const newArray = Array.from({ length: 6 }, () =>
@@ -61,6 +74,8 @@ function App() {
      }
     },animation.length * 150)
   }
+
+
   return (
     <>
       <Control handleNewArrayGenerate={handleNewArrayGenerate}
