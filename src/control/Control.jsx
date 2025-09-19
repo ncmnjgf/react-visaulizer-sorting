@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Visualizer.css"
-const Control = ({ handleNewArrayGenerate, handleSorting, user, setuser }) => {
+const Control = ({ handleNewArrayGenerate, handleSorting, user,isSorting, setuser ,reSet, selectedSorting}) => {
   return (
     <div className='controls-container'>
       <div className='input-wrapper'>
@@ -14,7 +14,22 @@ const Control = ({ handleNewArrayGenerate, handleSorting, user, setuser }) => {
       <select className='neumorphism-dropdown ' onChange={handleSorting}>
         <option value=''>Select Sorting</option>
         <option value='bubblesort'>Bubble Sorting</option>
+        <option value='mergesort'>Merge Sorting</option>
+        <option value='selectionsort'>Selection Sorting</option>
       </select>
+      <label>
+        Speed :
+        <input
+        type='range'
+        min="10"
+        max="200"
+        className='speedControl'
+        onChange={(e) => setSpeed(200 -e.target.value)}
+        disabled={isSorting}
+        
+        />
+
+      </label>
     </div>
   )
 }
