@@ -57,3 +57,4 @@ export const MergeSort = (array) => {
       sortedArray[k++] = auxiliaryArray[j++]; // Update the sortedArray copy
     }
   };
+  
